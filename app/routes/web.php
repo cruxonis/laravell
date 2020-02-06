@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', 'PagesController@index');
+Route::get('/about', 'PagesController@about');
+Route::get('/services', 'PagesController@services');
+Route::resource('posts', 'PostsController');
+Route::resource('comments', 'CommentController');
+/*
+Route::get('/users/{id}/{name}', function ($id, $name) {
+    return 'This is user '.$name. ' with id '.$id;
+});*/
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');
