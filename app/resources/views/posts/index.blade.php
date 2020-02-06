@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
+
 @section('content')
-    <h1>posts</h1>
+    
+<h1>Posts by all users:</h1>
     @if(count($posts) >0)
         @foreach($posts as $post)
             <div class="well">
