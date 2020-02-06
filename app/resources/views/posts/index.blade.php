@@ -3,7 +3,7 @@
 
 @section('content')
     
-<h1>Posts by All users:</h1>
+<h1>Posts by All Users:</h1>
     @if(count($posts) >0)
         @foreach($posts as $post)
             <div class="well">
