@@ -18,10 +18,6 @@ class CommentController extends Controller
     
     public function store(Request $request)
     {
-        
-
-       
-        
         //create post
         $comment=new Comment;
         $comment->body = $request->input('body');
@@ -34,6 +30,23 @@ class CommentController extends Controller
 
         return back()->with('success','Comment Created'); 
 
+    }
+//delete comments
+    public function destroy($id)
+    {
+        $comment= Comment::find($id);
+        if(auth()->user()->id !==$comment->user_id){
+            return redirect('/posts')->with('error','Unauthorized Page');
+        }
+
+        /*if($post->cover_image != 'noimage.jpg'){
+            //delete image
+            Storage::delete('public/cover_images/'.$post->cover_image);
+
+        }*/
+
+        $comment->delete();
+        return back()->with('success','Comment Deleted'); 
     }
     
     	

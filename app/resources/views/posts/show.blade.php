@@ -46,7 +46,7 @@
     @endif
 
     <h3>View Comments</h3>
-    @include('posts.commentsDisplay', ['comments' => $post->comments, 'post_id' => $post->id] )
+    @include('posts.commentsDisplay', ['comments' => $post->comments, 'post_id' => $post->id] ) 
     
     
     
