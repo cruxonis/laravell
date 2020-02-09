@@ -18,7 +18,7 @@ class CommentController extends Controller
     
     public function store(Request $request)
     {
-        //create post
+        //create comments
         $comment=new Comment;
         $comment->body = $request->input('body');
         $comment->user_id= auth()->user()->id;
